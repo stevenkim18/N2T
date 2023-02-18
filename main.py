@@ -54,6 +54,7 @@ class Notion2Tistory:
             print('[오류] 카카오톡 로그인 실패')
             sys.exit(1)
         authorize_code = self.s_client.get_tistory_authorize_code(cfg.TISTORY.CLIENT_ID, cfg.TISTORY.REDIRECT_URI)
+        print("authorize_code = "+authorize_code)
 
         # 위에서 발급받은 code로 tistory 로그인(access_token 발급받기)
         self.t_client = TistoryClient(authorize_code,
