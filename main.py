@@ -74,6 +74,7 @@ class Notion2Tistory:
 
             # get downloaded file path
             download_dir = os.path.expanduser(self.cfg.NOTION.DOWNLOAD_DIR)
+            print(download_dir)
             page_path = get_html_path(download_dir)
 
             # parsing html to notion style page, post tistory
@@ -87,7 +88,7 @@ class Notion2Tistory:
 
     def export_page(self, page):
         page_id = page[0].id
-        self.export_client.export(page_id, 'html')
+        self.export_client.export(page_id, 'html', self.n_client.file_token)
 
     def translate_img_url(self, contents):
         """

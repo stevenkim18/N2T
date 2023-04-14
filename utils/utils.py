@@ -104,7 +104,7 @@ def get_dir(path):
         return path
 
 
-def get_html_path(download_dir='~/'):
+def get_html_path(download_dir='~/.n2t'):
     """download_dir 폴더 내에 있는 모든 html 경로 반환"""
 
     # zip 파일로 다운로드 한 경우 압축해제
