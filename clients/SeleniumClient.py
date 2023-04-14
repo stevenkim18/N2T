@@ -24,7 +24,6 @@ class SeleniumClient:
 
         # web driver 시작
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-        #self.driver = webdriver.Chrome("/Users/seungwookim/Downloads/chromedriver_mac_arm64/chromedriver")
 
         print('[진행중] Selenium Chrome WebDriver 시작.. ')
         self.driver.implicitly_wait(self.t)
@@ -45,6 +44,7 @@ class SeleniumClient:
             # 비밀번호 입력
         self.driver.find_element(By.XPATH, '//*[@id="password--2"]').send_keys(pw)
         sleep(self.t // 2)
+
 
             # 로그인 버튼 클릭
         self.driver.find_element(By.XPATH, '//*[@id="mainContent"]/div/div/form/div[4]/button[1]').click()
